@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treasure Quest Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-black text-white font-[Quicksand] overflow-x-hidden">
+
+  <audio autoplay loop>
+    <source src="audio/romantic-ocean-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <main id="storyline-container">
+
+    <!-- SECTION TEMPLATE -->
+    <!-- Repeat this structure for each step with appropriate IDs and content -->
+
+    <section id="step-1" class="story-scene active relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-1.png" alt="Message in a Bottle"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-4xl font-[Great Vibes] text-white">Message in a Bottle</h2>
+        <p class="mt-4">You see a glowing bottle on the shore... do you open it?</p>
+        <div class="choices">
+          <button onclick="goToStep('step-2')" class="choice-btn">Open the Scroll</button>
+          <button onclick="goToStep('step-end')" class="choice-btn">Ignore it</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-2" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-2.png" alt="Clues in the Sand"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-4xl font-[Great Vibes] text-blue-100">Clues in the Sand</h2>
+        <p class="mt-4">The scroll reveals a map. Footprints lead toward the rocks.</p>
+        <div class="choices">
+          <button onclick="goToStep('step-3')" class="choice-btn">Follow the Footprints</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-3" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-3.png" alt="The Pearl of Promises"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <div class="choices">
+          <button onclick="goToStep('step-4')" class="choice-btn" style="margin-top: 180px;">Swim Deeper</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-4" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-4.jpeg" alt="The Grotto of Love"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-4xl font-[Great Vibes] text-blue-100">The Grotto of Love</h2>
+        <p class="mt-4">A glowing cave shimmers before you. Hearts sparkle along the walls.</p>
+        <div class="choices mt-6">
+          <button onclick="goToStep('step-5')" class="choice-btn">Uncover the Chest</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-5" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-5.jpeg" alt="The Hidden Chest"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-4xl font-[Great Vibes] text-blue-100">The Hidden Chest</h2>
+        <p class="mt-4">You open it slowly… and inside: 'You were always the treasure, Maryse.'</p>
+        <div class="choices mt-6">
+          <button onclick="goToStep('step-6')" class="choice-btn">Follow the lights</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-6" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-6.jpeg" alt="Forever Us"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-4xl font-[Great Vibes] text-blue-100">Forever Us</h2>
+        <p class="mt-4">“For every wave that kisses the shore, I promise to love you more.”</p>
+        <div class="choices mt-6">
+          <button onclick="goToStep('step-7')" class="choice-btn">No matter what</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="step-7" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-7.jpeg" alt="Forever Us"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-5xl font-[Great Vibes] text-white">To Be Continued...</h2>
+        <p class="mt-4 text-lg italic text-white max-w-xl">
+          The story doesn’t end here. A new adventure awaits—new shores, new sunsets... and the same heartbeat.
+        </p>
+      </div>
+    </section>
+
+    <section id="step-end" class="story-scene hidden relative h-screen w-screen overflow-hidden">
+      <img src="assets/step-end.png" alt="The End?"
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
+      <div class="story-box absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+        <h2 class="text-4xl font-[Great Vibes] text-blue-100">The End?</h2>
+        <p class="mt-4">You walk away, never knowing the magic that could've been...</p>
+        <div class="choices mt-6">
+          <button onclick="goToStep('step-1')" class="choice-btn">Go Back</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
